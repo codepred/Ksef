@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>ksef-java</artifactId>
+        <groupId>io.alapierre.ksef</groupId>
+        <version>2.0.25-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>ksef-sample</artifactId>
+
+    <properties>
+        <ksef.client.version>2.0.25-SNAPSHOT</ksef.client.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.1.2</version>
+                <configuration>
+                    <excludes>
+                        <exclude>**/*IT.java</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-failsafe-plugin</artifactId>-->
+<!--                <version>3.1.2</version>-->
+<!--                <configuration>-->
+<!--                    <testSourceDirectory>src/test-integration/java</testSourceDirectory>-->
+<!--                </configuration>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <goals>-->
+<!--                            <goal>integration-test</goal>-->
+<!--                            <goal>verify</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.alapierre.ksef</groupId>
+            <artifactId>ksef-client-okhttp</artifactId>
+            <version>${ksef.client.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.alapierre.ksef</groupId>
+            <artifactId>ksef-json-serializer-gson</artifactId>
+            <version>${ksef.client.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.alapierre.ksef</groupId>
+            <artifactId>ksef-token-facade</artifactId>
+            <version>${ksef.client.version}</version>
+        </dependency>
+
+        <!-- potrzebne, tylko jeśli logujemy się podpisem -->
+<!--        <dependency>-->
+<!--            <groupId>io.alapierre.ksef</groupId>-->
+<!--            <artifactId>ksef-dss-facade</artifactId>-->
+<!--            <version>${ksef.client.version}</version>-->
+<!--            <scope>compile</scope>-->
+<!--            <exclusions>-->
+<!--                <exclusion>-->
+<!--                    <artifactId>jaxb-runtime</artifactId>-->
+<!--                    <groupId>org.glassfish.jaxb</groupId>-->
+<!--                </exclusion>-->
+<!--            </exclusions>-->
+<!--        </dependency>-->
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.10.1</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+</project>
