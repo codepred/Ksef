@@ -36,7 +36,7 @@ public class InterfejsyInteraktywneZapytaniaApi {
                 request,
                 InvoiceQueryResponse.class,
                 token);
-
+        System.out.println(ret.get().getInvoiceHeaderList().get(0).getInvoicingDate());
         return ret.orElseThrow(() -> new ApiException("Nieprawidłowa odpowiedź z API"));
     }
 

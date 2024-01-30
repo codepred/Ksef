@@ -33,7 +33,7 @@ public class OkHttpApiClient extends AbstractApiClient {
     private final MediaType OCTET = MediaType.get("application/octet-stream; charset=utf-8");
 
     public OkHttpApiClient(JsonSerializer serializer) {
-        super(serializer, Environment.DEMO);
+        super(serializer, Environment.TEST);
         client = new OkHttpClient();
     }
 
