@@ -15,6 +15,7 @@
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <start-class>com.studia.KsefApp</start-class>
   </properties>
 
   <dependencies>
@@ -48,6 +49,14 @@
       <artifactId>flying-saucer-pdf</artifactId>
       <version>9.1.22</version>
     </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+      <version>6.1.3</version>
+    </dependency>
+
     <dependency>
       <groupId>com.itextpdf</groupId>
       <artifactId>barcodes</artifactId>
@@ -111,11 +120,6 @@
       <groupId>commons-io</groupId>
       <artifactId>commons-io</artifactId>
       <version>2.5</version>
-    </dependency>
-    <dependency>
-      <groupId>org.liquibase</groupId>
-      <artifactId>liquibase-core</artifactId>
-      <version>4.23.0</version>
     </dependency>
 
     <!-- Security -->
