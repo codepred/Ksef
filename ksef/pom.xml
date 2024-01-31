@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
@@ -123,23 +124,23 @@
     </dependency>
 
     <!-- Security -->
-<!--    <dependency>-->
-<!--      <groupId>org.springframework.boot</groupId>-->
-<!--      <artifactId>spring-boot-starter-security</artifactId>-->
-<!--      <version>3.1.2</version>-->
-<!--    </dependency>-->
-<!--    <dependency>-->
-<!--      <groupId>com.auth0</groupId>-->
-<!--      <artifactId>java-jwt</artifactId>-->
-<!--      <version>4.4.0</version>-->
-<!--    </dependency>-->
+    <!--    <dependency>-->
+    <!--      <groupId>org.springframework.boot</groupId>-->
+    <!--      <artifactId>spring-boot-starter-security</artifactId>-->
+    <!--      <version>3.1.2</version>-->
+    <!--    </dependency>-->
+    <!--    <dependency>-->
+    <!--      <groupId>com.auth0</groupId>-->
+    <!--      <artifactId>java-jwt</artifactId>-->
+    <!--      <version>4.4.0</version>-->
+    <!--    </dependency>-->
 
-<!--    &lt;!&ndash; Validation &ndash;&gt;-->
-<!--    <dependency>-->
-<!--      <groupId>org.springframework.boot</groupId>-->
-<!--      <artifactId>spring-boot-starter-validation</artifactId>-->
-<!--      <version>3.1.2</version>-->
-<!--    </dependency>-->
+    <!--    &lt;!&ndash; Validation &ndash;&gt;-->
+    <!--    <dependency>-->
+    <!--      <groupId>org.springframework.boot</groupId>-->
+    <!--      <artifactId>spring-boot-starter-validation</artifactId>-->
+    <!--      <version>3.1.2</version>-->
+    <!--    </dependency>-->
 
     <!-- Lombok -->
     <dependency>
@@ -179,12 +180,12 @@
       <artifactId>spring-boot-autoconfigure</artifactId>
       <version>3.2.1</version>
     </dependency>
-      <dependency>
-          <groupId>io.alapierre.ksef</groupId>
-          <artifactId>ksef-client-spec</artifactId>
-          <version>2.0.25-SNAPSHOT</version>
-          <scope>compile</scope>
-      </dependency>
+    <dependency>
+      <groupId>io.alapierre.ksef</groupId>
+      <artifactId>ksef-client-spec</artifactId>
+      <version>2.0.25-SNAPSHOT</version>
+      <scope>compile</scope>
+    </dependency>
     <dependency>
       <groupId>io.alapierre.ksef</groupId>
       <artifactId>ksef-client-okhttp</artifactId>
@@ -210,5 +211,23 @@
       <scope>compile</scope>
     </dependency>
   </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <version>3.2.1</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>repackage</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
 
 </project>
