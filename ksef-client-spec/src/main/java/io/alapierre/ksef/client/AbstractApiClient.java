@@ -25,7 +25,7 @@ public abstract class AbstractApiClient implements ApiClient {
     protected final JsonSerializer serializer;
 
     protected AbstractApiClient(JsonSerializer serializer) {
-        url = Environment.TEST.getUrl();
+        url = Environment.DEMO.getUrl();
         this.serializer = serializer;
     }
 
