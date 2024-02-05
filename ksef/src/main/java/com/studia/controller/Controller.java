@@ -19,6 +19,7 @@ import io.alapierre.ksef.token.facade.KsefTokenFacade;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.val;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -31,9 +32,13 @@ import java.util.concurrent.TimeUnit;
 @RestController
 @RequiredArgsConstructor
 public class Controller {
+
+    @Value( "${version}" )
+    private String version;
     private static final JsonSerializer serializer = new GsonJsonSerializer();
     private static final ApiClient client = new OkHttpApiClient(serializer);
     private static final InterfejsyInteraktywneSesjaApi sesjaApi = new InterfejsyInteraktywneSesjaApi(client);
+
     @PostMapping("/api/add-invoice")
     public ResponseEntity<Object> addInvoice(@RequestParam(name = "invoice") MultipartFile invoice,
                                             @RequestParam(name = "token") String token,
@@ -190,5 +195,15 @@ public class Controller {
         sesjaApi.terminateSession(sessionToken);
         file.delete();
         return ResponseEntity.status(200).body(null);
+    }
+
+    @GetMapping("/version")
+    ResponseEntity<Object> getVersion(){
+        return ResponseEntity.status(200).body(version);
+    }
+
+    @GetMapping()
+    ResponseEntity<Object> getVersionDefault(){
+        return ResponseEntity.status(200).body(version);
     }
 }
